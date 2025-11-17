@@ -1,0 +1,68 @@
+1. Componentes (Classe vs. Funcionais)
+Componentes Funcionais:
+
+Definidos como funções JavaScript.
+
+Modelo moderno e preferido.
+
+Gerenciam estado e ciclo de vida usando Hooks (useState, useEffect).
+
+Componentes de Classe:
+
+Definidos como classes que herdam de React.Component.
+
+Gerenciam estado via this.state e this.setState().
+
+Utilizam métodos de ciclo de vida (Ex: componentDidMount).
+
+2. Props e Children
+Props (Propriedades):
+
+São os dados passados do componente Pai para o Filho.
+
+São imutáveis (somente leitura). O fluxo de dados é unidirecional.
+
+Children (props.children):
+
+Uma prop especial que representa o conteúdo aninhado entre as tags de um componente.
+
+Permite a composição de componentes.
+
+3. Gerenciamento de Estado (State)
+Função: O State é um conjunto de dados que muda ao longo do tempo e é gerenciado internamente pelo componente. Uma mudança no State aciona a re-renderização.
+
+Em Componentes Funcionais:
+
+Utiliza o Hook useState: const [valor, setValor] = useState(valorInicial);
+
+A função setValor é usada para substituir o estado e renderizar a UI.
+
+Em Componentes de Classe:
+
+Atualizado usando this.setState(novoObjeto).
+
+4. Ciclo de Vida dos Componentes
+Define os momentos-chave na existência de um componente (Montagem, Atualização e Desmontagem).
+
+Em Componentes de Classe (Métodos):
+
+componentDidMount(): Executado após a primeira renderização (ideal para chamadas de API).
+
+componentDidUpdate(): Executado após atualizações de Props ou State.
+
+componentWillUnmount(): Executado antes de o componente ser removido (ideal para limpeza/ cleanup).
+
+Em Componentes Funcionais (Hook useEffect):
+
+O useEffect substitui a maioria dos métodos de ciclo de vida de classe.
+
+Montagem (Did Mount): Usado com um array de dependências vazio ([]).
+
+Desmontagem (Will Unmount): O código de limpeza é retornado na função do useEffect.
+
+5. 👆 Gerenciamento de Eventos
+Função: Capturar as interações do usuário (toque, digitação) e mapeá-las para funções (handlers) em JavaScript.
+
+Atribuição: Eventos são passados como props para componentes nativos (Ex: onPress para toques, onChangeText para entradas de texto).
+
+Exemplo: Passar uma função diretamente: <Button onPress={funcaoDeTratamento} title="Pressionar" />.
