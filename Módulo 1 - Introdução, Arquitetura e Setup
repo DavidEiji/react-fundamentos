@@ -1,0 +1,41 @@
+História: Criado pelo Facebook em 2015, baseado no React (web) para permitir que desenvolvedores construam aplicativos móveis com JavaScript.
+
+Estrutura e Arquitetura:
+
+Não usa WebViews (como o Cordova/Ionic).
+
+Utiliza a Bridge (Ponte) assíncrona para comunicação entre o código JavaScript e a thread nativa (Java/Kotlin no Android, Swift/Objective-C no iOS).
+
+O código JS roda em um thread em segundo plano (o JavaScript Runtime).
+
+Elementos são renderizados como componentes nativos (ex: <View> se torna um UIView no iOS ou android.view.View no Android).
+
+Vantagens:
+
+Reutilização de Código: Grande parte do código (a lógica de negócio) pode ser compartilhada entre Android e iOS.
+
+Hot Reloading / Fast Refresh: Permite ver as mudanças no código quase instantaneamente, acelerando o desenvolvimento.
+
+Comunidade: Usa a vasta e madura comunidade e ecossistema do JavaScript/React.
+
+Comparação:
+
+Vs. Nativo: Mais rápido de desenvolver, mas pode ter performance marginalmente inferior em tarefas de CPU muito intensivas.
+
+Vs. Híbrido (Ex: Cordova/Ionic): RN renderiza componentes nativos, o que proporciona uma experiência de usuário e performance muito superior.
+
+Configuração do Ambiente:
+
+Node.js e npm: Essenciais, pois o React Native é um ecossistema JavaScript que depende do npm para gerenciar pacotes.
+
+Editor de Código: VS Code é o padrão da indústria devido ao excelente suporte a React/JavaScript.
+
+React Native CLI vs. Expo:
+
+Expo (Recomendado para Iniciantes/Protótipos): Um framework que abstrai as configurações nativas. Permite criar e testar o app rapidamente usando o app Expo Go no celular, sem precisar de Xcode ou Android Studio.
+
+React Native CLI: Necessário para projetos que exigem módulos nativos personalizados ou acesso profundo às configurações de build nativo.
+
+Primeiro App (com Expo): Criado usando o comando:
+
+npx create-expo-app NomeDoProjeto
