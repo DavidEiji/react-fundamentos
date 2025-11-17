@@ -1,0 +1,44 @@
+1. React Navigation
+Definição: A biblioteca padrão e mais popular para gerenciar o roteamento (troca de telas) em aplicativos React Native.
+
+Containers: A navegação é estruturada usando "Navegadores" que encapsulam e gerenciam o histórico de telas.
+
+Setup: Requer a instalação da biblioteca base (@react-navigation/native) e de um container específico (Ex: @react-navigation/stack).
+
+2. Tipos de Navegação
+Stack Navigation (Pilha):
+
+Função: Cria um fluxo hierárquico onde as telas são empilhadas.
+
+Comportamento: A nova tela cobre a anterior. O botão Voltar desempilha e retorna à tela anterior.
+
+Uso: Ideal para a maioria dos fluxos sequenciais (Ex: Tela Inicial $\rightarrow$ Detalhes $\rightarrow$ Checkout).
+
+Tab Navigation (Abas):
+
+Função: Permite troca rápida entre as seções principais do aplicativo.
+
+Uso: Geralmente aparece na parte inferior da tela (bottom tabs).
+
+Estrutura: Cada aba geralmente contém sua própria Stack de navegação.
+
+Drawer Navigation (Menu Deslizante):
+
+Função: Cria um menu lateral que desliza para mostrar opções.
+
+Uso: Ideal para configurações, links menos acessados ou opções globais.
+
+3. Navegação e Parâmetros
+Navegar para Telas: O método principal para ir para outra tela é navigation.navigate('NomeDaTela').
+
+Este método injeta o objeto navigation nas props da tela ou é acessado via Hook useNavigation().
+
+Passar Parâmetros: Parâmetros são passados como um segundo argumento da função Maps.
+
+Exemplo: navigation.navigate('Detalhes', { userId: 42, tipo: 'amigo' })
+
+Receber Parâmetros: Na tela de destino, usa-se o Hook useRoute() para acessar os dados.
+
+Exemplo: const route = useRoute(); const id = route.params.userId;
+
+Retornar: O método navigation.goBack() retorna à tela anterior na pilha.
