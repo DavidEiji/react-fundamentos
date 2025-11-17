@@ -1,0 +1,64 @@
+1. APIs e Requisições HTTP
+API (Application Programming Interface):
+
+Conjunto de regras e protocolos que permite que dois softwares diferentes (Ex: seu app React Native e seu servidor Node.js) se comuniquem.
+
+APIs RESTful (Representational State Transfer):
+
+Um estilo de arquitetura para APIs que usa o protocolo HTTP e URLs (URIs) para realizar operações em recursos.
+
+Principais características: Stateless (sem estado) e uso de métodos HTTP padrão.
+
+Métodos HTTP (CRUD): Usados para interagir com o recurso no servidor.
+
+GET: Recuperar (Read) dados.
+
+POST: Criar (Create) novos dados.
+
+PUT/PATCH: Atualizar (Update) dados existentes.
+
+DELETE: Excluir (Delete) dados.
+
+2. Ferramentas para Requisições
+Fetch API (Nativo):
+
+É uma função nativa do JavaScript moderno (disponível no React Native).
+
+Retorna Promises.
+
+Limitação: Não trata erros de status HTTP (como 404) como rejeição de Promise automaticamente; isso precisa ser verificado manualmente.
+
+Axios (Biblioteca Externa):
+
+Uma biblioteca popular de terceiros, baseada em Promises.
+
+Vantagens: Possui tratamento automático de erros de status HTTP e oferece recursos extras (Ex: interceptors para JWT/autenticação).
+
+Uso: É a escolha preferida da comunidade por ser mais robusta e fácil de configurar.
+
+3. Armazenamento e Renderização de Dados
+Hook useState: Essencial para armazenar o estado da requisição no componente:
+
+const [dados, setDados] = useState([]); (Para o resultado da API).
+
+const [loading, setLoading] = useState(true); (Para controlar o indicador de carregamento).
+
+Hook useEffect: Usado para disparar a requisição à API. O fetch deve ocorrer dentro de um useEffect com um array de dependências vazio ([]) para que a chamada ocorra apenas uma vez, após a montagem do componente.
+
+Renderização Condicional:
+
+A interface precisa lidar com os três estados possíveis: Loading, Erro e Dados Recebidos.
+
+Exemplo: Se (!loading e dados), renderiza a lista de dados.
+4. Indicador de Carregamento (Loading)
+Função: Melhora a Experiência do Usuário (UX), informando que a aplicação está processando dados e não travou.
+
+Implementação: Usa-se o componente <ActivityIndicator> do React Native, controlado pelo estado de loading.
+
+JavaScript
+
+// Exemplo de Lógica:
+if (loading) {
+  return <ActivityIndicator size="large" color="#0000ff" />;
+}
+// Senão, renderiza o resto da tela com os dados...
