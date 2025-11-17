@@ -1,0 +1,60 @@
+1. Componentes Fundamentais (Primitivas Nativas)
+<View>:
+
+É o contêiner básico de layout, similar à <div> do HTML.
+
+Essencial para agrupar elementos e aplicar o sistema de layout Flexbox.
+
+<Text>:
+
+O ÚNICO componente que pode exibir texto.
+
+Regra: Todo o texto visível deve estar sempre encapsulado por um <Text>.
+
+<Image>:
+
+Usado para exibir imagens.
+
+Requer a prop source: use require() para imagens locais e { uri: 'URL' } para imagens de rede.
+
+<TextInput>:
+
+Permite a entrada de texto pelo usuário (equivalente ao <input>).
+
+Controlado via props como value e onChangeText.
+
+<ScrollView>:
+
+Permite que o conteúdo da tela seja rolável (scroll).
+
+2. Estilização com StyleSheet
+Definição: É a API do React Native para definir estilos de forma otimizada e estruturada.
+
+Sintaxe: Os estilos são escritos em objetos JavaScript.
+
+Propriedades usam camelCase (Ex: backgroundColor).
+
+Criação: A melhor prática é usar StyleSheet.create() para melhorar o desempenho e a legibilidade.
+
+Aplicação: Usa-se a prop style. Pode aceitar um array de objetos para combinar estilos ou aplicar condicionais.
+
+Diferença do CSS: Não possui cascading (herança total) e não usa unidades como rem (usa pixels lógicos).
+
+3. Flexbox (Sistema de Layout)
+Função: É o modelo de layout padrão do React Native, ativado em todos os <View>.
+
+Eixos:
+
+Eixo Principal: Definido por flexDirection (padrão é 'column').
+
+Eixo Cruzado: Perpendicular ao eixo principal.
+
+Propriedades Chave:
+
+flexDirection: Define a direção ('column' ou 'row').
+
+justifyContent: Alinha itens no Eixo Principal.
+
+alignItems: Alinha itens no Eixo Cruzado.
+
+flex: 1: Define a capacidade de um item crescer e ocupar todo o espaço restante disponível no contêiner.
